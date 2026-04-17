@@ -1,11 +1,12 @@
-import Nav from "./nav.tsx";
-import './App.css'
+import './App.css';
+import TheNav from "./nav.tsx";
+
 
 function App() {
 
   return (
     
-    <Nav />
+    <TheNav />
     
   );
 }

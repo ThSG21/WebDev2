@@ -2,10 +2,12 @@ import Home from "./home.tsx";
 import About from "./about.tsx";
 import TheForm from "./form.tsx";
 import Products from "./products.tsx";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 
 
-function Nav() {
+
+function TheNav() {
     return (
         <BrowserRouter>
             <SetNav />
@@ -21,15 +23,20 @@ function Nav() {
 
 function SetNav() {
     return (
-        <nav>
-            <ul>
-                <li><Link to="/home">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/form">Form</Link></li>
-                <li><Link to="/products">Products</Link></li>
-            </ul>
-        </nav>
+        <Navbar bg="light" expand="lg" dat-bs-theme="dark" className="bg-body-tertiary">
+            <Container>
+                <Navbar.Brand as={Link} to="/home">Puma-BootStrap</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link as={Link} to="/form">Form</Nav.Link>
+                        <Nav.Link as={Link} to="/products">Products</Nav.Link>
+                        <Nav.Link as={Link} to="/about">About</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>      
+            </Container>
+        </Navbar>
     );
 }
 
-export default Nav;
+export default TheNav;
