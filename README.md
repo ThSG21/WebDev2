@@ -39,10 +39,10 @@ Posts are fetched from the backend and displayed dynamically.
 
 ### 4. API Communication
 The frontend communicates with a backend server running on `localhost:3000`:
-- Fetch posts (GET)  
-- Create posts (POST)  
-- Delete posts (DELETE)  
-- Handle user authentication (POST)  
+- Fetch posts   
+- Create posts  
+- Delete posts  
+- Handle user authentication 
 
 All data is exchanged in JSON format.
 
@@ -52,10 +52,10 @@ All data is exchanged in JSON format.
 - React  
 - React Router  
 - React Bootstrap  
-- JavaScript (ES6)  
+- JavaScript   
 - HTML/CSS  
-- Node.js (backend)  
-- Express (API)
+- Node.js 
+- Express 
 
 ---
 
