@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# Social Posts Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project is a web-based social posting application built using React and a REST API backend.  
+Users can create accounts, log in, and share posts in a simple and interactive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- User registration and login system  
+- Create and delete posts  
+- Real-time UI updates after actions  
+- Protected access to posts page  
+- Responsive layout using Bootstrap  
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How the System Works
 
-## Expanding the ESLint configuration
+### 1. User Authentication
+Users can create an account and log in using a username and password.  
+Once authenticated, user data is stored in local storage to maintain the session.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2. Navigation & Routing
+The app uses client-side routing to manage pages:
+- Login page  
+- Account creation page  
+- Posts page (restricted to logged-in users)  
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Unauthorized users are redirected to the login page.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 3. Posts System
+After logging in, users can:
+- Create posts by submitting text content  
+- View all existing posts  
+- Delete posts  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Posts are fetched from the backend and displayed dynamically.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 4. API Communication
+The frontend communicates with a backend server running on `localhost:3000`:
+- Fetch posts (GET)  
+- Create posts (POST)  
+- Delete posts (DELETE)  
+- Handle user authentication (POST)  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+All data is exchanged in JSON format.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## Technologies Used
+- React  
+- React Router  
+- React Bootstrap  
+- JavaScript (ES6)  
+- HTML/CSS  
+- Node.js (backend)  
+- Express (API)
+
+---
+
+## Author
+Diego Dominguez
